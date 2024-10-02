@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>POTE KOLE </title>
+<head>
 
-    <!-- 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POTE KOLE </title>
+
+  <!-- 
     - favicon
   -->
-    <link rel="shortcut icon" href="./assets/images/splashscreen.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/logo_potekole.png" type="image/x-icon">
 
-    <!-- 
+  <!-- 
       - custom css link
     -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- 
+  <!-- 
       - google font link
     -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Grape+Nuts&family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Grape+Nuts&family=Lilita+One&display=swap"
+    rel="stylesheet">
 
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
 
-  </head>
-  <body id="top" bgcolor="white">
-    <!-- 
+</head>
+
+<body id="top" bgcolor="white">
+  <!-- 
     - #HEADER
    -->
 
@@ -43,7 +45,7 @@
 
     <div class="container">
 
-      <a href="#" class="logo">
+      <a href="index.html#" class="logo">
         POTE KOLE
       </a>
 
@@ -56,21 +58,21 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="#home" class="navbar-link">Accueil</a>
+            <a href="index.html#home" class="navbar-link">Accueil</a>
           </li>
 
           <li>
-            <a href="#features" class="navbar-link">Fonctionnalités</a>
+            <a href="index.html#features" class="navbar-link">Fonctionnalités</a>
           </li>
 
           <li>
-            <a href="#overview" class="navbar-link">Aperçu</a>
+            <a href="index.html#overview" class="navbar-link">Aperçu</a>
           </li>
 
-          <li> 
+          <li>
             <a href="https://appdistribution.firebase.google.com/mobilerequired">
               <button class="btn-primary" onclick="">
-              Get started
+                Get started
               </button>
             </a>
           </li>
@@ -86,32 +88,38 @@
     </div>
   </header>
 
-    <main>
-      <article class="container">
-  
-        <!-- 
+
+  <article class="container">
+    <!-- 
+just a changes            - #Dynamique content
+          -->
+
+    <section class="overview" id="fundraisingDetail"></section>
+
+    <!-- 
           - #HERO
         -->
-  
-        <section class="hero" id="home">
-  
-          <div class="hero-content">
-            <h1 class="h2 hero-title">Unissez-vous pour une Cause, Changez le Monde en un Clic!</h1>
-  
-            <a href="https://appdistribution.firebase.google.com/testerapps/1:1007886381659:android:5508c0608419684e5a857e/releases/6qkdt5gmnfmdg?utm_source=firebase-console">
-              <button class="btn-primary">Download now</button>
-            </a>
-          </div>
-  
-          <figure class="hero-banner"></figure>
-  
-        </section>
-    
-      <!-- 
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+        <h1 class="h2 hero-title">Unissez-vous pour une Cause, Changez le Monde en un Clic!</h1>
+
+        <a
+          href="https://appdistribution.firebase.google.com/testerapps/1:1007886381659:android:5508c0608419684e5a857e/releases/6qkdt5gmnfmdg?utm_source=firebase-console">
+          <button class="btn-primary">Download now</button>
+        </a>
+      </div>
+
+      <figure class="hero-banner"></figure>
+
+    </section>
+
+    <!-- 
         - #FEATURES
       -->
 
-      <section>
+    <!-- <section>
 
         <div class="container">
     
@@ -154,83 +162,77 @@
     
         </div>
     
-      </section>
+      </section> -->
 
-      <section class="features" id="features" >
-        <ul class="features-list">
-          <li class="features-item">
-            <h3 class="h3 features-item-title">
-             About US
-            </h3>
+    <section class="features" id="features">
+      <ul class="features-list">
+        <li class="features-item">
+          <h3 class="h3 features-item-title">
+            Apropos de Nous
+          </h3>
 
-            <p class="features-item-text">
-POTE KOLE est une application mobile innovante conçue pour révolutionner la collecte de fonds en fournissant une plateforme fluide permettant aux individus, aux organismes à but non lucratif et aux organisations de créer et de gérer des campagnes de collecte de fonds.
-            </p>
-          </li>
+          <p class="features-item-text">
+            POTE KOLE est une application mobile innovante conçue pour révolutionner la collecte de fonds en fournissant
+            une plateforme fluide permettant aux individus, aux organismes à but non lucratif et aux organisations de
+            créer et de gérer des campagnes de collecte de fonds.
+          </p>
+        </li>
 
-          <li class="features-item">
-            <h3 class="h3 features-item-title"> How we Operate </h3>
-            Our app leverages the power of modern technology to connect passionate fundraisers with a global community of donors, streamlining the fundraising process and making a positive impact on countless causes.                 
-            <p class="features-item-text">
-            </p>
-          </li>
+        <li class="features-item">
+          <h1 class="h2 hero-title">Comment ça marche</h1>
+          Our app leverages the power of modern technology to connect passionate fundraisers with a global community of
+          donors, streamlining the fundraising process and making a positive impact on countless causes.
+          <p class="features-item-text">
+          </p>
+        </li>
 
-        </ul>
+      </ul>
 
-        <figure class="feature-banner">
-          <img src="./assets/images/how_to.svg" alt="pod app" class="banner-img">
-        </figure>
+      <figure class="feature-banner">
+        <img src="assets/images/how_to.svg" alt="pod app" class="banner-img">
+      </figure>
 
-       
-      </section>
 
-       <!-- 
+    </section>
+
+    <!-- 
         - #OVERVIEW
       -->
+    </section>
 
-      <section class="overview" id="overview">
-        <div class="overview-card">
+    <section class="overview" id="overview">
+      <div class="overview-card">
+        <figure class="overview-banner">
+          <img src="assets/images/play_time.svg" alt="overview banner" class="img-logo">
+        </figure>
 
-          <figure class="overview-banner">
-            <!-- <img src="./assets/images/overview-banner.png" alt="overview banner" class="img-logo"> -->
-            <img src="./assets/images/play_time.svg" alt="overview banner" class="img-logo">
-          </figure>
-
-          <div class="overview-content">
-            
-            <h2 class="h2 overview-title">POTEKOLE est bien plus qu'une simple application de Collect</h2>
-
-            <ul class="overview-list">
-
-              <li class="overview-item">
-                <ion-icon name="notifications-outline"></ion-icon>
-                <span><strong> </strong></span>
-              </li>
-
-              <li class="overview-item">
-                <ion-icon name="accessibility-outline"></ion-icon>
-                <span><strong>  Donnez du Pouvoir à la Générosité,  </strong> votre Compassion, notre Plateforme</span>
-              </li>
-
-              <li> 
-                <a href="https://appdistribution.firebase.google.com/mobilerequired">
-                  <button class="btn-primary" onclick="">
+        <div class="overview-content">
+          <h2 class="h2 overview-title">POTEKOLE est bien plus qu'une simple application de Collect</h2>
+          <ul class="overview-list">
+            <li class="overview-item">
+              <ion-icon name="notifications-outline"></ion-icon>
+              <span><strong> </strong></span>
+            </li>
+            <li class="overview-item">
+              <ion-icon name="accessibility-outline"></ion-icon>
+              <span><strong> Donnez du Pouvoir à la Générosité, </strong> votre Compassion, notre Plateforme</span>
+            </li>
+            <li>
+              <a href="https://appdistribution.firebase.google.com/mobilerequired">
+                <button class="btn-primary">
                   Get started
-                  </button>
-                </a>
-              </li>
-            
-            </ul>
+                </button>
+              </a>
+            </li>
 
-          </div>
-
+          </ul>
         </div>
+      </div>
+    </section>
 
-      </section>
+  </article>
+  </main>
 
-      </article>    
-    </main>
-  
   <!-- 
     - Footer
   -->
@@ -240,7 +242,7 @@ POTE KOLE est une application mobile innovante conçue pour révolutionner la co
 
       <div class="footer-brand">
 
-        <a href="#" class="logo_footer">
+        <a href="index.html#" class="logo_footer">
           POTE KOLE
         </a>
 
@@ -252,9 +254,9 @@ POTE KOLE est une application mobile innovante conçue pour révolutionner la co
             </a>
           </li>
 
-        
+
           <li>
-            <a href="https://appdistribution.firebase.google.com/mobilerequired"" target="_blank" class="social-link">
+            <a href="https://appdistribution.firebase.google.com/mobilerequired"" target=" _blank" class="social-link">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
@@ -280,47 +282,47 @@ POTE KOLE est une application mobile innovante conçue pour révolutionner la co
         <ul class="footer-list">
 
           <li>
-            <a href="#" class="footer-link">À propos de nous</a>
+            <a href="index.html#" class="footer-link">À propos de nous</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Fonctionnalités</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-          <li>
-            <a href="#" class="footer-link">Centre d'aide</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Contact</a>
+            <a href="index.html#" class="footer-link">Fonctionnalités</a>
           </li>
 
         </ul>
 
         <ul class="footer-list">
           <li>
-            <a href="#" class="footer-link">FAQ’S</a>
+            <a href="index.html#" class="footer-link">Centre d'aide</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Testimonial</a>
+            <a href="index.html#" class="footer-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <a href="index.html#" class="footer-link">FAQ’S</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Termes et conditions</a>
+            <a href="index.html#" class="footer-link">Testimonial</a>
+          </li>
+
+          <li>
+            <a href="index.html#" class="footer-link">Termes et conditions</a>
           </li>
         </ul>
 
         <div class="footer-btn-group">
-          <a href="#">
-            <img src="./assets/images/footer-1.png" alt="apple store">
+          <a href="index.html#">
+            <img src="assets/images/footer-1.png" alt="apple store">
           </a>
 
           <a href="https://appdistribution.firebase.google.com/mobilerequired">
-            <img src="./assets/images/footer-2.png" alt="google play store">
+            <img src="assets/images/footer-2.png" alt="google play store">
           </a>
         </div>
 
@@ -331,45 +333,105 @@ POTE KOLE est une application mobile innovante conçue pour révolutionner la co
     <p class="copyright">&copy; Copyrights 2022 VEYe All rights reserved.</p>
   </footer>
 
-    <!-- 
+  <!-- 
       - #GO TO TOP
     -->
 
-    <a href="#top" class="go-top" data-go-top>
-      <ion-icon name="chevron-up"></ion-icon>
-    </a>
-      <!-- 
+  <a href="index.html#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+  <!-- 
         - custom js link
       -->
-      <script src="./assets/js/script.js"></script>
-  
-      <!-- 
+  <script src="assets/js/script.js"></script>
+
+  <!-- 
         - ionicon link
       -->
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
-      <script>
-        const getUrlParameter = (name) => {
-            const params = new URLSearchParams(window.location.search);
-            return params.get(name);
-        };
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        // Get the 'id' from the URL
-        const id = getUrlParameter('id');
+  <script src="projects.js"></script>
 
-        if (id) {
-        const deeplink = `potekole://fundraising/${id}`;
-            // Open the deep link if possible
-            window.location.href = deeplink;
-        } else {
-            console.error('No "id" parameter found in the URL.');
-            window.location.href = `potekole://fundraising/`;
-        }
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAwP7gx3L5GvJrCUS-IO6DwvtpP_CsayLI",
+      authDomain: "pote-kole.firebaseapp.com",
+      projectId: "pote-kole",
+      storageBucket: "pote-kole.appspot.com",
+      messagingSenderId: "1007886381659",
+      appId: "1:1007886381659:web:365729b902a192dc5a857e",
+      measurementId: "G-8WXKYZPBWB"
+    };
 
-      </script>
-   
-  </body>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    const db = firebase.firestore();
+
+
+    const getUrlParameter = (name) => {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    };
+
+
+    // Get the 'id' from the URL
+    const id = getUrlParameter('id');
+
+    if (id) {
+      const deeplink = `potekole://fundraising/${id}`;
+      // Open the deep link if possible
+      window.location.href = deeplink;
+
+      function handleClick() {
+        // window.location.href = deeplink;
+        alert("https://appdistribution.firebase.google.com/testerapps/1:1007886381659:android:5508c0608419684e5a857e/releases/6qkdt5gmnfmdg?utm_source=firebase-console")
+      }
+
+      (async function main() {
+        const projectObj = new Project();
+        // console.log(" GET DATA",await projectObj.getAll());
+        const project = await projectObj.get(id);
+        let details = ` 
+                  <div class="overview-card">
+                    <figure class="overview-banner">
+                      <img src="https://pote-kole.web.app/${project.image}" alt=${project.name} class="">
+                    </figure>
+
+                    <div class="overview-content">
+                      <h2 class="h2 overview-title">
+                        ${project.name}  
+                      </h2>
+                      <ul class="overview-list">
+                      
+                        <li class="overview-item">
+                          <ion-icon name="notifications-outline"></ion-icon>
+                          <span><strong>   ${project.description} </strong> </span>
+                        </li>
+                        <li> 
+                          <a>
+                            <button class="btn-primary" onclick="handleClick()">
+                             Pote KOLE
+                            </button>
+                          </a>
+                        </li>
+                    
+                      </ul>
+                    </div>
+                  </div>
+                `;
+
+        document.querySelector('#fundraisingDetail').innerHTML = details;
+        document.querySelector('title').innerHTML = project.name
+      }());
+    } else {
+      window.location.href = `potekole://fundraising/`;
+    }
+  </script>
+</body>
+
 </html>
 
 
