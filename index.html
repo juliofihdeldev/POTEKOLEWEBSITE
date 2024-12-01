@@ -397,7 +397,7 @@ just a changes            - #Dynamique content
         let details = ` 
                   <div class="overview-card">
                     <figure class="overview-banner">
-                      <img src="https://pote-kole.web.app/${project.image}" alt=${project.name} class="">
+                      <img src="${project.image}" alt=${project.name} class="">
                     </figure>
 
                     <div class="overview-content">
@@ -426,37 +426,49 @@ just a changes            - #Dynamique content
             document.querySelector('#fundraisingDetail').innerHTML = details;
             document.querySelector('title').innerHTML = project.name
 
-            // Replace this with your image URL
-            let image = `https://pote-kole.web.app/${project.image}`; 
+            function setMetaImages(imageUrl) {
+              console.log("IMAGE URL", imageUrl);
+                // Create an array of meta tags to add
+                const metaTags = [
+                    { name: 'twitter:image', content: imageUrl },
+                    { property: 'og:image', content: imageUrl },
+                    { property: 'og:image:secure_url', content: imageUrl },
+                    { property: 'og:image', content: imageUrl } // WhatsApp uses og:image
+                ];
 
-            // Set the image source in link tag
-            let link = document.createElement('link');
-            link.rel = 'image_src';
-            link.href = image;
-            document.head.appendChild(link);
+                // Create link tag for image_src
+                const link = document.createElement('link');
+                link.rel = 'image_src';
+                link.href = imageUrl;
+                document.head.appendChild(link);
 
-            // Set the image source in meta tags
-            let metaTwitter = document.createElement('meta');
-            metaTwitter.name = 'twitter:image';
-            metaTwitter.content = image;
-            document.head.appendChild(metaTwitter);
+                // Create and append meta tags
+                metaTags.forEach(tagInfo => {
+                    const metaTag = document.createElement('meta');
+                    
+                    if (tagInfo.name) {
+                        metaTag.name = tagInfo.name;
+                    }
+                    
+                    if (tagInfo.property) {
+                        metaTag.setAttribute('property', tagInfo.property);
+                    }
+                    
+                    metaTag.content = tagInfo.content;
+                    document.head.appendChild(metaTag);
+                });
+            }
+            // add header meta sub title
+            document.querySelector('meta[name="description"]').setAttribute('content', project.name);
+            document.querySelector('meta[name="twitter:description"]').setAttribute('content', project.name);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', project.name);
+            //set tile to be title + project name
+            document.querySelector('title').innerHTML = `PoteKOLE - ${project.name}`;
 
-        let metaFB = document.createElement('meta');
-        metaFB.setAttribute('property', 'og:image');
-        metaFB.content = image;
-        document.head.appendChild(metaFB);
 
-        let metaOG = document.createElement('meta');
-        metaOG.setAttribute('property', 'og:image');
-        metaOG.content = image;
-        document.head.appendChild(metaOG);
-
-
-
-            let metaOG = document.createElement('meta');
-            metaOG.setAttribute('property', 'og:image');
-            metaOG.content = image;
-            document.head.appendChild(metaOG);
+            // Usage example
+            let image = `${project.image}`;
+            setMetaImages(image);
       }());
     } else {
       window.location.href = `potekole://fundraising/`;
